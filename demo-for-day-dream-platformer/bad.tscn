@@ -1,0 +1,1336 @@
+[gd_scene load_steps=28 format=4 uid="uid://ce4va3uygo64d"]
+
+[ext_resource type="Script" uid="uid://4vcj384hg1mp" path="res://character_body_2d.gd" id="1_m1hf2"]
+[ext_resource type="Texture2D" uid="uid://mrgyl8hh11sl" path="res://image (1).png" id="2_p1kul"]
+[ext_resource type="Texture2D" uid="uid://c83hite421no0" path="res://pixel knight.png" id="3_mkyob"]
+[ext_resource type="Texture2D" uid="uid://c41rmybj87rw1" path="res://Dungeon Tile Set.png" id="4_rkevm"]
+[ext_resource type="Texture2D" uid="uid://c1y4lbf0be8x2" path="res://cat.webp" id="5_pqxss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyht1"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf3um"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huihk"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw3kd"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvh5c"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28aoi"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnlp7"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8v81"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd4vy"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw60f"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eji0w"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwhpj"]
+atlas = ExtResource("2_p1kul")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt76e"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq7yr"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3r3k"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blcw0"]
+atlas = ExtResource("3_mkyob")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyht1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyht1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf3um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huihk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw3kd")
+}],
+"loop": true,
+"name": &"Idle Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvh5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28aoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnlp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8v81")
+}],
+"loop": true,
+"name": &"Idle Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd4vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw60f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eji0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwhpj")
+}],
+"loop": true,
+"name": &"Run Left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt76e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq7yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3r3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blcw0")
+}],
+"loop": true,
+"name": &"Run Right",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyidc"]
+size = Vector2(15, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28aoi"]
+texture = ExtResource("4_rkevm")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, 8, -8, 8)
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, 8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(5.75548, 4.856186, 5.036045, -8, 3.057598, -1.6187286, -1.2590122, 3.2374573, -8, -3.057598)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+5:8/0 = 0
+1:9/0 = 0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -3.057598)
+2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -3.057598)
+3:9/0 = 0
+3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+1:10/0 = 0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -3.057598)
+2:10/0 = 0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -3.057598)
+3:10/0 = 0
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -3.057598)
+5:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+5:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+2:13/0 = 0
+4:13/0 = 0
+4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+5:13/0 = 0
+5:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+6:13/0 = 0
+6:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+1:14/0 = 0
+1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+2:14/0 = 0
+2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+4:14/0 = 0
+4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+5:14/0 = 0
+5:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+6:14/0 = 0
+6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.3381634, 8, 2.3381634, 8, 8, -8, 8)
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+7:15/0 = 0
+7:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, 8, 8)
+8:15/0 = 0
+8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6.115198, 0, 8, -8, 5.3957634)
+9:15/0 = 0
+9:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5.036045, -8, 3.057598, -1.6187286, -1.2590122, 3.2374573, -8, 5.3957634)
+10:15/0 = 0
+10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.6187286, 0.17985916, 3.057598, -3.956891, 8, -5.3957615, 8, 8, -5.2159033, 8)
+11:15/0 = 0
+11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.17985916, -1.0791512, 2.1583042, 2.8777409, 5.3957615, 8, -8, 8, -8, -5.036044)
+
+[sub_resource type="TileSet" id="TileSet_jnlp7"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_28aoi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28aoi"]
+size = Vector2(17, 7.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnlp7"]
+size = Vector2(29, 38.75)
+
+[node name="Root" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-933, -19)
+script = ExtResource("1_m1hf2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(8, -33)
+scale = Vector2(0.3671875, 0.4501008)
+sprite_frames = SubResource("SpriteFrames_vyht1")
+animation = &"Idle Right"
+frame_progress = 0.6690245
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(8, -30)
+shape = SubResource("RectangleShape2D_pyidc")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3, 3)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(41, -27)
+tile_map_data = PackedByteArray("AAD5/wMAAAACAAEAAAD7/wMAAAACAAEAAAD8/wMAAAACAAEAAAD9/wMAAAACAAEAAAD+/wMAAAACAAEAAAD//wMAAAACAAEAAAAAAAMAAAACAAEAAAABAAMAAAACAAEAAAACAAMAAAACAAEAAAADAAMAAAACAAEAAAAEAAMAAAACAAEAAAAFAAMAAAACAAEAAAAGAAMAAAACAAEAAAAHAAMAAAACAAEAAAAIAAMAAAACAAEAAAAJAAMAAAACAAEAAAAKAAMAAAACAAEAAAALAAMAAAACAAEAAAAMAAMAAAACAAEAAAD6/wAAAAAIAAwAAAD//wIAAAANAAkAAAD5/wIAAAAIAA0AAFAFAAIAAAAHAAoAAAD+/wAAAAAIAAwAAAD+/wEAAAAIAA0AAAACAAAAAAAIAAwAAAAGAAAAAAAIAAwAAAAGAAEAAAAIAA0AAAACAAIAAAAFAA0AAAD6/wMAAAACAAEAAAANAPj/AAACAAEAAAAOAPj/AAACAAEAAAAJAO//AAACAAEAAAAIAO//AAACAAEAAAAHAO//AAACAAEAAAAMAOb/AAACAAEAAAANAOb/AAACAAEAAAAOAOb/AAACAAEAAAAPAOb/AAACAAEAAAAHANz/AAACAAEAAAAGANz/AAACAAEAAAAFANz/AAACAAEAAAAJAND/AAACAAEAAAAKAND/AAACAAEAAAALAND/AAACAAEAAAAMAND/AAACAAEAAAANAND/AAACAAEAAAAOAND/AAACAAEAAAAMAPj/AAAEAA4AAGAJAO7/AAACAA4AAAANAOX/AAAFAA4AAAAHANv/AAAGAA4AAAADAM3/AAACAAEAAAACAM3/AAACAAEAAAABAM3/AAACAAEAAAAAAM3/AAACAAEAAAD//83/AAACAAEAAAD9/8z/AAACAAEAAAD8/8z/AAACAAEAAAD7/8z/AAACAAEAAAD6/8z/AAACAAEAAAD5/8z/AAACAAEAAAD4/8z/AAACAAEAAAD3/8z/AAACAAEAAAD2/8z/AAACAAEAAAD1/8z/AAACAAEAAAD0/8z/AAACAAEAAADz/8z/AAACAAEAAAABAMz/AAACAA4AAADz/8v/AAAEAA4AAAD6/8v/AAACAA4AAAALAM//AAAFAA4AAADx/8X/AAACAAEAAADw/8X/AAACAAEAAADv/8X/AAACAAEAAADu/8X/AAACAAEAAADt/8X/AAACAAEAAADs/8X/AAACAAEAAAD0/73/AAACAAEAAAD1/73/AAACAAEAAAD2/73/AAACAAEAAAD3/73/AAACAAEAAAD4/73/AAACAAEAAAD5/73/AAACAAEAAAD6/73/AAACAAEAAAD7/73/AAACAAEAAAD8/73/AAACAAEAAAD9/73/AAACAAEAAAD+/73/AAACAAEAAAD//73/AAACAAEAAAAAAL3/AAACAAEAAAABAL3/AAACAAEAAAACAL3/AAACAAEAAAADAL3/AAACAAEAAAAEAL3/AAACAAEAAAAFAL3/AAACAAEAAAAGAL3/AAACAAEAAAAHAL3/AAACAAEAAAAIAL3/AAACAAEAAAAJAL3/AAACAAEAAAAKAL3/AAACAAEAAAALAL3/AAACAAEAAAAMAL3/AAACAAEAAAANAL3/AAACAAEAAADu/8T/AAAEAA4AAAD5/7z/AAAGAA4AAAAEALz/AAABAA4AAAD+/7z/AAACAA4AAAALALz/AAAEAA4AAAAcALn/AAACAAEAAAAdALn/AAACAAEAAAAeALn/AAACAAEAAAAfALn/AAACAAEAAAAgALn/AAACAAEAAAAhALn/AAACAAEAAAAiALn/AAACAAEAAAAjALn/AAACAAEAAAAkALn/AAACAAEAAAAlALn/AAACAAEAAAApAK7/AAACAAEAAAAqAK7/AAACAAEAAAArAK7/AAACAAEAAAAsAK7/AAACAAEAAAAtAK7/AAACAAEAAAAuAK7/AAACAAEAAAA7AKX/AAABAAIAAAA7AKb/AAABAAIAAAA7AKf/AAABAAIAAAA7AKj/AAABAAIAAAA7AKn/AAABAAIAAAA7AKr/AAABAAIAAAA7AKv/AAABAAIAAAA7AKz/AAABAAIAAAA7AKT/AAABAAIAAAA7AKP/AAABAAIAAAA7AKL/AAABAAIAAAA/AKf/AAABAAIAAAA/AKb/AAABAAIAAAA/AKX/AAABAAIAAAA/AKT/AAABAAIAAAA/AKP/AAABAAIAAAA/AKL/AAABAAIAAAA/AKH/AAABAAIAAAA/AKD/AAABAAIAAAA/AJ//AAABAAIAAAA/AJ7/AAABAAIAAABDAKL/AAABAAIAAABDAKH/AAABAAIAAABDAKD/AAABAAIAAABDAJ//AAABAAIAAABDAJ7/AAABAAIAAABDAJ3/AAABAAIAAABDAJz/AAABAAIAAABDAJv/AAABAAIAAABDAJr/AAABAAIAAAA7AKH/AAADAA4AAAA/AJ3/AAACAA4AAABDAJn/AAAGAA4AAAA6AKz/AAABAA4AAGA+AKf/AAAEAA4AAGBCAKL/AAADAA4AAGBJAJr/AAABAAIAAABJAJn/AAABAAIAAABJAJj/AAABAAIAAABJAJf/AAABAAIAAABJAJb/AAABAAIAAABJAJX/AAABAAIAAABJAJT/AAABAAIAAABJAJv/AAABAAIAAABJAJP/AAABAAIAAABJAJL/AAABAAIAAABJAJH/AAABAAIAAABJAJD/AAABAAIAAABJAI//AAABAAIAAABJAI7/AAABAAIAAABJAIz/AAABAAIAAABJAIv/AAABAAIAAABJAIr/AAABAAIAAABIAJv/AAAEAA4AAGBIAJP/AAAFAA4AAGBIAI//AAABAA4AAGBJAIn/AAADAA4AAABIAIr/AAAEAA4AAGAfALj/AAADAA4AAAAjALj/AAAGAA4AAAApAK3/AAABAA4AAAArAK3/AAADAA4AAAAtAK3/AAAFAA4AAAAuAK3/AAAGAA4AAABNAIj/AAABAAIAAABNAIf/AAABAAIAAABNAIb/AAABAAIAAABNAIX/AAABAAIAAABNAIT/AAABAAIAAABNAIP/AAABAAIAAABNAIL/AAABAAIAAABNAIH/AAABAAIAAABNAH3/AAABAAIAAABNAHz/AAABAAIAAABNAHv/AAABAAIAAABNAHr/AAABAAIAAABNAID/AAABAAIAAABNAH//AAABAAIAAABNAH7/AAABAAIAAABNAHn/AAABAAIAAABNAHj/AAABAAIAAABNAHf/AAABAAIAAABNAHb/AAABAAIAAABNAHX/AAABAAIAAABNAIn/AAABAAIAAABNAIr/AAABAAIAAABNAIv/AAABAAIAAABMAIv/AAAEAA4AAGBMAIX/AAAEAA4AAGBMAHr/AAAEAA4AAGBNAHT/AAACAA4AAABMAH//AAAGAA4AAGBMAHb/AAAGAA4AAGBMAIj/AAABAA4AAGBOAHb/AAAHAAoAAFCQAO3/AAACAAEAAACRAO3/AAACAAEAAACSAO3/AAACAAEAAABbAPj/AAAGAA0AAABbAPn/AAACAAEAAABcAPn/AAACAAEAAABdAPn/AAACAAEAAABeAPn/AAACAAEAAABfAPn/AAACAAEAAABgAPj/AAAGAA0AAABgAPn/AAACAAEAAABhAPj/AAAFAA4AAABhAPn/AAACAAEAAABiAPn/AAACAAEAAABjAPj/AAAEAA0AAABjAPn/AAACAAEAAABkAPn/AAACAAEAAABlAPn/AAACAAEAAABrAPP/AAAGAA0AAABrAPT/AAACAAEAAABsAPP/AAAGAA4AAABsAPT/AAACAAEAAABtAPT/AAACAAEAAABuAPT/AAACAAEAAABvAPP/AAAFAA0AAABvAPT/AAACAAEAAABwAPT/AAACAAEAAABxAPP/AAABAA4AAABxAPT/AAACAAEAAAB0APb/AAAFAA0AAAB0APf/AAACAAEAAAB1APf/AAACAAEAAAB2APb/AAADAA4AAAB2APf/AAACAAEAAAB3APP/AAACAAwAAAB3APT/AAAIAAwAAAB3APX/AAAIAA0AAAB3APf/AAACAAEAAAB4APf/AAACAAEAAAB5APf/AAACAAEAAAB6APb/AAAGAA0AAAB6APf/AAACAAEAAAB7APf/AAACAAEAAAB8APb/AAAFAA4AAAB8APf/AAACAAEAAACCAPL/AAACAAEAAACDAPH/AAAGAA0AAACDAPL/AAACAAEAAACEAPH/AAAGAA4AAACEAPL/AAACAAEAAACFAPL/AAACAAEAAACGAPH/AAAFAA0AAACGAPL/AAACAAEAAACHAPL/AAACAAEAAACIAPH/AAAEAA0AAACIAPL/AAACAAEAAACPAO3/AAACAAEAAACQAOz/AAAFAA0AAACSAOz/AAAGAA0AAACTAOz/AAADAA4AAACTAO3/AAACAAEAAACUAOz/AAAFAA0AAACUAO3/AAACAAEAAACVAO3/AAACAAEAAACaAOj/AAACAAEAAACbAOj/AAACAAEAAACcAOX/AAAEAAwAAACcAOb/AAAFAA0AAACcAOf/AAACAAEAAACdAOX/AAAFAAwAAACdAOf/AAACAAEAAACeAOX/AAAGAAwAAACeAOf/AAACAAEAAACfAOf/AAACAAEAAACgAOb/AAADAA4AAACgAOf/AAACAAEAAAChAOf/AAACAAEAAACiAOf/AAACAAEAAACjAOb/AAAGAA0AAACjAOf/AAACAAEAAACkAOf/AAACAAEAAACuAOH/AAACAAEAAACvAOD/AAAFAA0AAACvAOH/AAACAAEAAACwAOH/AAACAAEAAACxAOH/AAACAAEAAACyAOH/AAACAAEAAACzAOH/AAACAAEAAAC0AOD/AAAGAA0AAAC0AOH/AAACAAEAAAC1AOH/AAACAAEAAAC5AN7/AAAEAA0AAAC5AN//AAACAAEAAAC6AN7/AAACAAEAAAC6AN//AAACAAEAAAC7AN7/AAACAAEAAAC8AN7/AAACAAEAAAC9AN7/AAACAAEAAAC+AN7/AAACAAEAAAC/AN3/AAAGAA0AAAC/AN7/AAACAAEAAADAAN3/AAACAAEAAADBAN3/AAACAAEAAADCANv/AAAIAAwAAGDCANz/AAACAAEAAADDANz/AAACAAEAAADEANj/AAACAA0AAADEANv/AAAFAA0AAADEANz/AAACAAEAAADFANr/AAAIAA0AAGDFANv/AAACAAEAAADGANv/AAACAAEAAADHANr/AAACAAEAAADIANn/AAACAAEAAADJANj/AAAFAA4AAADJANn/AAACAAEAAADKANn/AAACAAEAAADLANn/AAACAAEAAADMANj/AAAHAAoAAADMANn/AAACAAEAAADNANj/AAAGAA4AAADNANn/AAACAAEAAABZAOv/AAADAAEAAABaAOv/AAACAA4AAABaAOz/AAACAAEAAABbAOv/AAABAA4AAABbAOz/AAACAAEAAABcAOv/AAACAA4AAABcAOz/AAACAAEAAABdAOv/AAADAA4AAABdAOz/AAACAAEAAABeAOv/AAAEAA4AAABeAOz/AAACAAEAAABfAOv/AAAFAA4AAABfAOz/AAACAAEAAABgAOv/AAAGAA4AAABgAOz/AAACAAEAAABhAOv/AAABAA4AAABhAOz/AAACAAEAAABiAOv/AAACAA4AAABiAOz/AAACAAEAAABjAOv/AAADAA4AAABjAOz/AAACAAEAAABkAOv/AAAEAA4AAABkAOz/AAACAAEAAABlAOv/AAAFAA4AAABlAOz/AAACAAEAAABmAOv/AAAGAA4AAABmAOz/AAACAAEAAABnAOv/AAABAAEAAABnAOr/AAAEAA4AAABZAOr/AAAEAA4AAABYAOv/AAAEAA4AAGBoAOv/AAAEAA4AAFCxAOD/AAACAA4AAAC7AN3/AAAFAA4AAADDANv/AAAGAA4AAADHANn/AAACAA4AAAD6ALz/AAABAAIAAAD6AL3/AAABAAIAAAD6AL7/AAABAAIAAAD6AL//AAABAAIAAAD6AMD/AAABAAIAAAD6AMH/AAABAAIAAAD6AML/AAABAAIAAAD6AMP/AAABAAIAAAD6AMT/AAABAAIAAAD6AMX/AAABAAIAAAD6AMb/AAABAAIAAAD6AMf/AAABAAIAAAD6AMj/AAABAAIAAAD6AMn/AAABAAIAAAD6AMr/AAABAAIAAAD6AMv/AAABAAIAAAD6AMz/AAABAAIAAAD7ALv/AAABAAIAAAD7ALz/AAABAAIAAAD7AL3/AAABAAIAAAD7AL7/AAABAAIAAAD7AL//AAABAAIAAAD7AMD/AAABAAIAAAD7AMH/AAABAAIAAAD7AML/AAABAAIAAAD7AMP/AAABAAIAAAD7AMT/AAABAAIAAAD7AMX/AAABAAIAAAD7AMb/AAABAAIAAAD9ALj/AAAHAAoAAAD6AM3/AAABAAIAAAD6AM7/AAABAAIAAAD6AM//AAABAAIAAAD7AMf/AAABAAIAAAD7AMj/AAABAAIAAAD7AMn/AAABAAIAAAD7AMr/AAABAAIAAAD7AMv/AAABAAIAAAD7AMz/AAABAAIAAAD8ALn/AAABAAEAAAD8ALr/AAABAAMAAAD8ALv/AAABAAIAAAD8ALz/AAABAAIAAAD8AL3/AAABAAIAAAD8AL7/AAABAAIAAAD8AL//AAABAAIAAAD8AMD/AAABAAIAAAD8AMH/AAABAAIAAAD8AML/AAABAAIAAAD8AMP/AAABAAIAAAD8AMT/AAABAAIAAAD8AMX/AAABAAIAAAD8AMb/AAABAAIAAAD8AMf/AAABAAIAAAD8AMj/AAABAAIAAAD8AMn/AAABAAIAAAD8AMr/AAABAAIAAAD9ALn/AAACAAEAAAD9ALr/AAABAAIAAAD9ALv/AAABAAIAAAD9ALz/AAABAAIAAAD9AL3/AAABAAIAAAD9AL7/AAABAAIAAAD9AL//AAABAAIAAAD9AMD/AAABAAIAAAD9AMH/AAABAAIAAAD9AML/AAABAAIAAAD9AMP/AAABAAIAAAD9AMT/AAABAAIAAAD9AMX/AAABAAIAAAD9AMb/AAABAAIAAAD9AMf/AAABAAIAAAD+ALn/AAAKAAkAAAD/ALn/AAABAAkAAAAAAbn/AAACAAkAAAABAbn/AAACAAoAAAACAbn/AAACAAoAAAADAbn/AAACAAkAAAD7ALn/AAABAAUAAAD7ALr/AAABAAYAAAD6ALr/AAABAAUAAAD6ALv/AAABAAYAAAD5ALz/AAABAAYAAAD5AL3/AAABAAYAAAD5AL7/AAABAAYAAAD5AL//AAABAAYAAAD5ALv/AAABAAYAAAD5AMD/AAABAAYAAAD5AMH/AAABAAYAAAD5AML/AAABAAYAAAD5AMP/AAABAAYAAAD5AMT/AAABAAYAAAD5AMX/AAABAAYAAAD5AMb/AAABAAYAAAD5AMf/AAABAAYAAAD5AMj/AAABAAYAAAD5AMn/AAABAAYAAAD5AMr/AAABAAYAAAD5AMv/AAABAAYAAAD5AMz/AAABAAYAAAD5AM3/AAABAAYAAAD5AM7/AAABAAYAAAD5AM//AAABAAYAAAD5AND/AAABAAYAAAD5ANH/AAABAAYAAAD5ANL/AAABAAYAAAD5ANP/AAABAAYAAAD+ALr/AAABAAIAAAD+ALv/AAABAAIAAAD+ALz/AAABAAIAAAD+AL3/AAABAAIAAAD+AL7/AAABAAIAAAD+AL//AAABAAIAAAD+AMD/AAABAAIAAAD+AMH/AAABAAIAAAD+AML/AAABAAIAAAD+AMP/AAABAAIAAAD+AMT/AAABAAIAAAD+AMX/AAABAAIAAAD+AMb/AAABAAIAAAD+AMf/AAABAAIAAAAEAbn/AAABAAIAAAAEAbr/AAABAAIAAAAEAbv/AAABAAIAAAAEAbz/AAABAAIAAAAEAb3/AAABAAIAAAAKAbn/AAABAAIAAAAKAbr/AAABAAIAAAAKAbv/AAABAAIAAAAKAbz/AAABAAIAAAAKAb3/AAABAAIAAAAEAb7/AAABAAIAAAAEAb//AAABAAIAAAAEAcD/AAABAAIAAAAEAcH/AAABAAIAAAAEAcL/AAABAAIAAAAEAcP/AAABAAIAAAAKAb7/AAABAAIAAAAKAb//AAABAAIAAAAKAcD/AAABAAIAAAAKAcH/AAABAAIAAAAKAcL/AAABAAIAAAAKAcP/AAABAAIAAAAKAcT/AAABAAIAAAAKAcX/AAABAAIAAAAKAcb/AAABAAIAAAAKAcf/AAABAAIAAAAKAcj/AAABAAIAAAAKAcn/AAABAAIAAAAEAcT/AAABAAIAAAAEAcX/AAABAAIAAAAEAcb/AAABAAIAAAAEAcf/AAABAAIAAAAEAcj/AAABAAIAAAAEAcn/AAABAAIAAAAEAcr/AAABAAIAAAAEAcv/AAABAAIAAAAHAcv/AAABAAIAAAAKAcv/AAABAAIAAAAKAcr/AAABAAIAAAAHAbn/AAABAAIAAAAHAbr/AAABAAIAAAAHAbv/AAABAAIAAAAHAbz/AAABAAIAAAAHAb3/AAABAAIAAAAHAb7/AAABAAIAAAAHAb//AAABAAIAAAAHAcD/AAABAAIAAAAHAcH/AAABAAIAAAAHAcL/AAABAAIAAAAHAcP/AAABAAIAAAAHAcT/AAABAAIAAAAHAcX/AAABAAIAAAAHAcb/AAABAAIAAAAHAcf/AAABAAIAAAAHAcj/AAABAAIAAAAHAcn/AAABAAIAAAAHAcr/AAABAAIAAAAKAcz/AAABAAIAAAAKAc3/AAABAAIAAAAKAc7/AAABAAIAAAAKAc//AAABAAIAAAAKAdD/AAABAAIAAAAKAdH/AAABAAIAAAAKAdL/AAABAAIAAAAKAdP/AAABAAIAAAAHAcz/AAABAAIAAAAHAc3/AAABAAIAAAAHAc7/AAABAAIAAAAHAc//AAABAAIAAAAHAdD/AAABAAIAAAAHAdH/AAABAAIAAAAHAdL/AAABAAIAAAAHAdP/AAABAAIAAAAHAdT/AAABAAIAAAAHAdX/AAABAAIAAAAHAdb/AAABAAIAAAAHAdf/AAABAAIAAAAKAdT/AAABAAIAAAAKAdX/AAABAAIAAAAKAdb/AAABAAIAAAAKAdf/AAABAAIAAAAKAdj/AAABAAIAAAAKAdn/AAABAAIAAAAKAdr/AAABAAIAAAAKAdv/AAABAAIAAAAKAdz/AAABAAIAAAAKAd3/AAABAAIAAAAKAd7/AAABAAIAAAAKAd//AAABAAIAAAAKAeD/AAABAAIAAAAKAeH/AAABAAIAAAAKAeL/AAABAAIAAAAKAeP/AAABAAIAAAAKAeT/AAABAAIAAAAKAeX/AAABAAIAAAAHAdj/AAABAAIAAAAHAdn/AAABAAIAAAAHAdr/AAABAAIAAAAHAdv/AAABAAIAAAAHAdz/AAABAAIAAAAHAd3/AAABAAIAAAAHAd7/AAABAAIAAAAHAd//AAABAAIAAAAHAeD/AAABAAIAAAAHAeH/AAABAAIAAAAHAeL/AAABAAIAAAAKAef/AAABAAIAAAAKAeb/AAABAAIAAAAKAej/AAABAAIAAAAKAen/AAABAAIAAAAKAer/AAABAAIAAAAKAev/AAABAAIAAAAKAez/AAABAAIAAAAKAe3/AAABAAIAAAAKAe7/AAABAAIAAAAKAe//AAABAAIAAAAKAfD/AAABAAIAAAAKAfH/AAABAAIAAAAKAfL/AAABAAIAAAAKAfP/AAABAAIAAAAKAfT/AAABAAIAAAAKAfX/AAABAAIAAAAKAfb/AAABAAIAAAAHAeP/AAABAAIAAAAHAeT/AAABAAIAAAAHAeX/AAABAAIAAAAHAeb/AAABAAIAAAAHAef/AAABAAIAAAAHAej/AAABAAIAAAAHAen/AAABAAIAAAAHAer/AAABAAIAAAAHAev/AAABAAIAAAAHAez/AAABAAIAAAAHAe3/AAABAAIAAAAHAe7/AAABAAIAAAAHAe//AAABAAIAAAAHAfD/AAABAAIAAAAHAfH/AAABAAIAAAAHAfL/AAABAAIAAAAHAfP/AAABAAIAAAAHAfT/AAABAAIAAAAHAfX/AAABAAIAAAAHAfb/AAABAAIAAAAHAff/AAABAAIAAAAHAfj/AAABAAIAAAAHAfn/AAABAAIAAAAHAfr/AAABAAIAAAAHAfv/AAABAAIAAAAHAfz/AAABAAIAAAAHAf3/AAABAAIAAAAHAf7/AAABAAIAAAAIAf//AAABAAIAAAAJAf//AAABAAIAAAAKAf//AAABAAIAAAAKAff/AAABAAIAAAAKAfj/AAABAAIAAAAKAfn/AAABAAIAAAAKAfr/AAABAAIAAAAKAfv/AAABAAIAAAAKAfz/AAABAAIAAAAKAf3/AAABAAIAAAAKAf7/AAABAAIAAAAHAf//AAABAAIAAAAEAcz/AAABAAIAAAAEAc3/AAABAAIAAAAEAc7/AAABAAIAAAAEAc//AAABAAIAAAAEAdD/AAABAAIAAAAEAdH/AAABAAIAAAAEAdL/AAABAAIAAAAFAdL/AAABAAIAAAAGAdL/AAABAAIAAAABAbr/AAAIAAwAAAABAbv/AAAIAA0AAADpAxv8AAACAAUAAADqAxv8AAACAAUAAADrAxv8AAACAAUAAADsAxv8AAACAAUAAADtAxv8AAACAAUAAADuAxv8AAACAAUAAADvAxv8AAACAAUAAADwAxv8AAACAAUAAADxAxv8AAACAAUAAADyAxv8AAACAAUAAADzAxv8AAACAAUAAAD0Axv8AAACAAUAAAD0Axz8AAAIAA0AAADzAxz8AAAIAA0AAADyAxz8AAAIAA0AAADxAxz8AAAIAA0AAADwAxz8AAAIAA0AAAD1Axv8AAACAAUAAAD2Axv8AAACAAUAAAD2Axr8AAACAAUAAAD2Axn8AAACAAUAAAD1Axn8AAACAAUAAAD1Axj8AAACAAUAAAD1Axf8AAACAAUAAADpAxr8AAACAAUAAADpAxn8AAACAAUAAADpAxj8AAACAAUAAADpAxf8AAACAAUAAADpAxb8AAACAAUAAACPAs//AAACAAUAAADA/wEAAAACAAUAAADB/wEAAAACAAUAAADC/wEAAAACAAUAAADD/wEAAAACAAUAAADE/wEAAAACAAUAAADF/wEAAAACAAUAAADF/wAAAAACAAUAAADF////AAACAAUAAADF//7/AAACAAUAAADF//3/AAACAAUAAADE//z/AAACAAUAAADD//z/AAACAAUAAADC//z/AAACAAUAAADB//z/AAACAAUAAADA//z/AAACAAUAAADA//3/AAACAAUAAADA//7/AAACAAUAAADA////AAACAAUAAADA/wAAAAACAAUAAADF//z/AAACAAUAAAA=")
+tile_set = SubResource("TileSet_jnlp7")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(2379, -330)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="." groups=["Enemy"]]
+position = Vector2(736, -1388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(248, 28)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4" groups=["Enemy"]]
+position = Vector2(2609, -432)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D4" groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(2162, -256)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D4/CharacterBody2D2" groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1855, -223)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(2031, -175)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(8, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1928, -172)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(3263, -647)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="." groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5" groups=["Enemy"]]
+position = Vector2(3335, -649)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(996, -1352)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(788, -1322)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1623, -115)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(767, -1309)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(820, -1302)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(747, -1295)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(657, -1112)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(599, -1105)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(284, -1035)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(314, -68)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(320, -67)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D6" type="CharacterBody2D" parent="." groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6" groups=["Enemy"]]
+position = Vector2(1756, -218)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(71, -1094)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-47, -1089)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-324, -955)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-152, -839)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-188, -1073)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(77, -764)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-326, -823)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-127, -802)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(47, -397)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-39, -249)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(21, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-92, -547)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D7" type="CharacterBody2D" parent="." groups=["Enemy"]]
+position = Vector2(-11, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7" groups=["Enemy"]]
+position = Vector2(4371, -1173)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4377, -1165)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4388, -1157)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4393, -1153)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4397, -1145)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4403, -1139)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4382, -1166)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4389, -1160)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4391, -1150)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4400, -1145)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4402, -1139)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4408, -1133)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4384, -1159)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4395, -1151)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4399, -1143)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4401, -1136)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4409, -1129)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4415, -1128)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4393, -1150)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4398, -1144)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4404, -1139)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4412, -1132)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4415, -1123)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4421, -1116)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4400, -1145)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1244, -1590)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4407, -1131)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4416, -1126)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4420, -1117)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4427, -1109)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4362, -1185)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1251, -1775)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4374, -1155)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4419, -1118)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4421, -1111)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4434, -1105)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4407, -1133)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4415, -1123)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4421, -1115)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4428, -1109)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4385, -1090)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4437, -1094)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(4413, -1121)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4379, -1170)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4381, -1149)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4392, -1121)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(3113, -492)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4407, -1115)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1167, -1463)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(3294, -569)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(2946, -451)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4397, -1116)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4403, -1100)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1780, -270)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1525, -282)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1283, -1843)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1281, -1746)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1543, -266)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4406, -1088)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1564, -262)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(3235, -531)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1280, -1819)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1732, -260)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1764, -253)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1761, -246)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1733, -239)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1693, -267)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1286, -1819)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1790, -254)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1695, -246)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4417, -1068)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1690, -232)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1199, -1572)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1197, -1422)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1146, -1494)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1305, -1654)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1673, -232)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1630, -224)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1638, -253)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1628, -245)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1602, -238)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1383, -2136)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1598, -225)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1386, -2097)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1139, -1335)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1368, -1974)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(4420, -1055)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1813, -232)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1386, -2032)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1393, -1939)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1304, -1526)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1374, -1870)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1317, -1634)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1163, -1313)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1393, -2083)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1398, -2012)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(1375, -1775)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1381, -1816)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1386, -1850)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1113, -1396)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1399, -1788)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(-6, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D3/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2/CharacterBody2D2" groups=["Enemy"]]
+position = Vector2(1405, -1734.875)
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4216.0
+offset_top = -1226.0
+offset_right = 4329.0
+offset_bottom = -1179.0
+theme_override_font_sizes/font_size = 9
+text = "save the cat 
+or
+save yourself"
+uppercase = true
+
+[node name="Cat" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(4160.2188, -1125.4845)
+scale = Vector2(0.054340757, 0.05269204)
+texture = ExtResource("5_pqxss")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 4168.0
+offset_top = -1148.0
+offset_right = 4198.0
+offset_bottom = -1125.0
+theme_override_font_sizes/font_size = 10
+text = "meow"
+
+[node name="CharacterBody2D8" type="CharacterBody2D" parent="." groups=["GoodNPC"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D8"]
+position = Vector2(4231.5, -783)
+shape = SubResource("RectangleShape2D_jnlp7")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -1041.0
+offset_top = -175.0
+offset_right = -844.0
+offset_bottom = -152.0
+text = "you are a terrible human 
+you lose"
